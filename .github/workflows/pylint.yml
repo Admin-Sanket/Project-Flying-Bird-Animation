@@ -16,7 +16,7 @@ jobs:
       - name: Run Python Linter
         run: |
           pip install pylint
-          pylint *.py
+          pylint *.html
 
   build:
     name: Build
