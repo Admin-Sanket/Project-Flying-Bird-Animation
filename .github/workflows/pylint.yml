@@ -29,8 +29,8 @@ jobs:
       - name: Lint HTML
         run: htmlhint index.html
 
-      - name: Lint CSS
-        run: stylelint "css/*.css"
+      - name: Lint CSS (Auto Fix)
+        run: stylelint "css/*.css" --fix
 
   build:
     name: Build Step
