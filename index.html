@@ -1,16 +1,21 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Flying Bird| Animation</title>
-</head>
-<body>
-
-        <div class="eagle zoom-out" >
-        </div>
-
-</body>
-</html>
+<main>
+    <header>
+        <h1>Flying Bird Animation</h1>
+    </header>
+    <!-- Added id="bird" for easier access -->
+    <div class="eagle zoom-out" id="bird" aria-label="Animated flying bird"></div>
+    <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+        <label for="speedRange">Speed:</label>
+        <input type="range" id="speedRange" min="1" max="10" value="5">
+        <button id="reverseBtn">Reverse Direction</button>
+    </div>
+</main>
+<script src="./js/animation-controls.js"></script>
+<!-- Add the following script to toggle direction when bird is clicked -->
+<script>
+document.getElementById('bird').addEventListener('click', function() {
+    this.classList.toggle('reverse');
+});
+</script>
