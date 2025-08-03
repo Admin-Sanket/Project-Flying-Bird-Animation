@@ -14,8 +14,7 @@ body{
     background:url(../Images/birdflying.png);
     width: 240px;
     height:207px;
-     animation: fly 1s steps(5) infinite ,
-                ahead 6s linear infinite;
+    animation: fly 1s steps(5) infinite, ahead 6s linear infinite;
 }
 .zoom-out{
     zoom: 50%;
@@ -27,7 +26,6 @@ body{
     100%{
         background-position:1204px;
     }
-
 }
 @keyframes ahead{
     0%{
@@ -36,5 +34,21 @@ body{
     100%{
         transform:translateX(3100px);
     }
+}
 
+/* Add these styles for reverse direction */
+.eagle.reverse {
+    /* Flips bird horizontally */
+    transform: scaleX(-1);
+    /* Use reverse animation for movement */
+    animation: fly 1s steps(5) infinite, reverse-ahead 6s linear infinite;
+}
+
+@keyframes reverse-ahead {
+    0% {
+        transform: scaleX(-1) translateX(3100px);
+    }
+    100% {
+        transform: scaleX(-1) translateX(-100px);
+    }
 }
