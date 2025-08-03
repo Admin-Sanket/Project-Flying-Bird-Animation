@@ -21,7 +21,10 @@ jobs:
       - name: Install Linters
         run: |
           npm install -g htmlhint stylelint stylelint-config-standard
-          echo '{}' > .stylelintrc.json
+          echo '{
+            "extends": "stylelint-config-standard",
+            "rules": {}
+          }' > .stylelintrc.json
 
       - name: Lint HTML
         run: htmlhint index.html
@@ -37,7 +40,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Simulate Build
-        run: echo "Build done"
+        run: echo "Build completed."
 
   deploy:
     name: Deploy to S3
